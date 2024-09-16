@@ -1,0 +1,60 @@
+{
+    "faqs": [
+        {
+            "question": "How do I adopt a horse?",
+            "answer": "To adopt a horse, start by visiting our 'View Horses' page to learn about the horses currently available for adoption. Once you've found a horse you'd like to adopt, you can contact us via email at support@coffinacres-spiritofm46-rescue.org or call our rescue center at +1 989 620 5955. We'll guide you through the adoption process, including meeting the horse and ensuring it's the right fit for your home."
+        },
+        {
+            "question": "What is the cost of adoption?",
+            "answer": "The adoption fees depend on the horse and its needs, typically ranging from $500 to $1,500. These fees cover the horse's care, including veterinary treatment, vaccinations, and rehabilitation. Feel free to contact us for specific details on individual horses and what the adoption fee includes."
+        },
+        {
+            "question": "How can I volunteer?",
+            "answer": "We're always looking for passionate volunteers! To get started, please contact us via email at support@coffinacres-spiritofm46-rescue.org to discuss the opportunities available. Our volunteer program includes hands-on work with the horses, assisting with events, or helping with administrative tasks. Before starting, all volunteers must go through a brief orientation to ensure the safety and well-being of both the horses and volunteers."
+        },
+        {
+            "question": "What kind of support do you offer after adoption?",
+            "answer": "We provide ongoing support to ensure a smooth transition for both the horse and its new family. This includes advice on care, feeding, and training. Additionally, we're always available for follow-up questions or concerns you might have after the adoption process is completed."
+        },
+        {
+            "question": "Can I donate to the rescue?",
+            "answer": "Absolutely! Donations are a critical part of how we operate and care for the horses. You can donate by visiting https://www.zeffy.com/donation-form/cf77c00a-6d88-4f4c-a77e-2eb9f3f4e9c2 and contributing online through Zeffy's secure platform. All donations go directly towards the care and rehabilitation of the horses in our rescue."
+        }
+    ],
+    "filters": [
+        "rescue",
+        "rehabilitation",
+        "adoption",
+        "sanctuary",
+        "pasture board",
+        "stall board",
+        "on-site trailer repair"
+    ],
+    "links": [
+        {
+            "name": "Donate to Spirit of M46 Rescue",
+            "description": "Support our efforts to rescue and care for horses by making a donation. All contributions go directly to horse care and rescue operations.",
+            "url": "https://www.zeffy.com/donation-form/cf77c00a-6d88-4f4c-a77e-2eb9f3f4e9c2"
+        },
+        {
+            "name": "Adopt a Horse",
+            "description": "Browse our 'View Horses' page to find a horse to adopt and give them a loving home.",
+            "url": "horses.html"
+        },
+        {
+            "name": "Volunteer Information",
+            "description": "Learn about volunteer opportunities and how you can help us care for and rehabilitate our rescue horses.",
+            "url": "volunteer.html"
+        },
+        {
+            "name": "Follow Us on Facebook",
+            "description": "Stay up-to-date with our latest rescue stories and events by following us on Facebook.",
+            "url": "https://facebook.com"
+        },
+        {
+            "name": "Follow Us on Instagram",
+            "description": "See beautiful photos of our rescued horses and get updates on their progress by following us on Instagram.",
+            "url": "https://instagram.com"
+        }
+    ]
+}
