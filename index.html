@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Horse Rescue - Home">
+    <meta property="og:description" content="Dedicated to the rescue and rehabilitation of horses.">
+    <meta property="og:image" content="https://github.com/wuhplaptop/432-fdf-sdg-gt34-g/blob/main/horses/horselogo.jpg?raw=true">
+    <meta property="og:url" content="https://coffinacres-spiritofm46-rescue.org">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="description" content="Horse Rescue - Dedicated to rescuing and rehabilitating horses.">
+    <title>Spirit of M46 Rescue - Home</title>
+    
+    <!-- Favicon settings (same as the other page) -->
+    <link rel="icon" href="https://github.com/wuhplaptop/432-fdf-sdg-gt34-g/blob/main/horses/horselogo.jpg?raw=true" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://github.com/wuhplaptop/432-fdf-sdg-gt34-g/blob/main/horses/horselogo.jpg?raw=true">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://github.com/wuhplaptop/432-fdf-sdg-gt34-g/blob/main/horses/horselogo.jpg?raw=true">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://github.com/wuhplaptop/432-fdf-sdg-gt34-g/blob/main/horses/horselogo.jpg?raw=true">
+
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff; /* White background for the page */
+            color: #000000; /* Black text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #ffffff; /* White background for the header */
+            color: #000000; /* Black text for the header */
+            padding: 20px 40px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.2em;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        /* Button styling */
+        .btn {
+            display: inline-block;
+            background-color: #ff0000; /* Red background */
+            color: #ffffff; /* White text */
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #cc0000; /* Darker red on hover */
+            cursor: pointer;
+        }
+
+        nav {
+            background-color: #ffffff; /* White background for the nav */
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #ff0000; /* Red text for the nav links */
+            text-decoration: none;
+            margin: 0 25px;
+            font-size: 1.2em;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            background-color: #ff0000; /* Red hover effect for links */
+            color: #ffffff; /* White text on hover */
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                font-size: 2em;
+                color: #ff0000; /* Red color for the hamburger icon on mobile */
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                cursor: pointer;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff; /* White container background */
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #000000; /* Black text for headings */
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6em;
+            color: #333333; /* Slightly lighter black for body text */
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin: 40px 0;
+            background-color: #f7f7f7; /* Light background for FAQ section */
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #000000; /* Black text for FAQ header */
+        }
+
+        .faq {
+            margin-bottom: 10px;
+            border: 1px solid #ff0000; /* Red border for FAQ */
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .faq h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #000000; /* Black FAQ heading */
+        }
+
+        .faq p {
+            display: none;
+            margin-top: 10px;
+            color: #333333;
+            font-size: 1em;
+        }
+
+        .faq.active p {
+            display: block;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #ff0000; /* Red background for the footer */
+            padding: 20px 0;
+            color: #ffffff; /* White text in the footer */
+            text-align: center;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        footer .footer-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 180px;
+        }
+
+        footer .footer-section h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        footer .footer-section p,
+        footer .footer-section a {
+            color: #ffffff;
+            font-size: 0.9em;
+            text-decoration: none;
+        }
+
+        footer .footer-section a:hover {
+            color: #000000; /* Black hover effect for links */
+        }
+
+        footer .social-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        footer .social-links a {
+            font-size: 1.3em;
+            color: #ffffff;
+        }
+
+        footer .donation-section img {
+            width: 120px;
+            margin-bottom: 5px;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            footer {
+                padding: 10px 0;
+            }
+
+            footer .footer-content {
+                justify-content: space-around;
+                gap: 10px;
+            }
+
+            footer .footer-section {
+                max-width: 140px;
+            }
+
+            footer .footer-section h3 {
+                font-size: 1em;
+            }
+
+            footer .footer-section p,
+            footer .footer-section a {
+                font-size: 0.85em;
+            }
+
+            footer .social-links a {
+                font-size: 1.2em;
+            }
+
+            footer .donation-section img {
+                width: 90px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Menu -->
+    <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="horses.html">View Horses</a>
+        <a href="#services">Services</a>
+        <a href="links.html">Links</a>
+        <a href="#contact">Contact Us</a>
+    </div>
+</nav>
+
+    <header>
+        <img src="https://github.com/wuhplaptop/432-fdf-sdg-gt34-g/blob/main/horses/horselogo.jpg?raw=true" alt="Horse Rescue Banner" style="max-width: 100%; height: auto;">
+        <h1>Welcome to Spirit of M46 Rescue</h1>
+        <p>Dedicated to the rescue and rehabilitation of horses.</p>
+
+        <!-- Red Button -->
+        <a href="horses.html" class="btn">View Horses</a>
+    </header>
+
+    <div class="container">
+        <h2>Our Mission</h2>
+        <p>
+            At Spirit of M46 Rescue, we are driven by a deep passion for providing a second chance to neglected, abandoned, and mistreated horses. Our mission is to rescue these beautiful animals from harmful situations, whether due to abuse, neglect, or abandonment, and offer them a safe space to heal, recover, and thrive.
+        </p>
+        <p>
+            We understand that every horse's needs are unique, which is why we offer individualized care, including medical treatment, nutritional support, and mental rehabilitation. Our dedicated team works closely with veterinarians and equine specialists to create personalized recovery plans, ensuring that each horse receives the attention and compassion it deserves. Beyond recovery, our goal is to find these horses loving forever homes, where they can continue to thrive and live peacefully.
+        </p>
+        <p>
+            Horses that are unable to be rehomed due to special medical or behavioral needs are given a permanent sanctuary at our facility, where they can live out their days in a serene and nurturing environment.
+        </p>
+
+        <!-- Services Section -->
+        <h2 id="services">Our Services</h2>
+        <p>We offer a variety of services to support horse welfare and rehabilitation:</p>
+        <ul>
+            <li><strong>Equine Rescue:</strong> Our primary focus is rescuing horses from dangerous, abusive, or neglectful situations. We work closely with local authorities and other rescue organizations to ensure these horses are brought to safety.</li>
+            <li><strong>Rehabilitation:</strong> Every horse we rescue receives a customized rehabilitation plan, which includes veterinary care, dietary improvements, physical therapy, and socialization. Whether a horse requires medical treatment for injuries or emotional support from past trauma, we are here to guide them through the healing process.</li>
+            <li><strong>Adoption:</strong> Once a horse is rehabilitated, we work tirelessly to find them a loving home. Our adoption process is thorough, ensuring that the horses are matched with the right families or individuals who can meet their ongoing needs.</li>
+            <li><strong>Sanctuary:</strong> For horses that cannot be adopted due to chronic health conditions or other limitations, we offer a permanent sanctuary. These horses receive lifelong care at our facility, enjoying open pastures and companionship from other sanctuary horses.</li>
+            <li><strong>Pasture Board:</strong> We provide open, spacious pastures where horses can roam freely, graze, and socialize. Our pasture boarding services are ideal for owners looking to give their horses a natural and enriching environment.</li>
+            <li><strong>Stall Board:</strong> Our clean, comfortable stables provide individual stalls with high-quality bedding, ensuring the horses are well-rested and safe. Stall boarding includes daily exercise and pasture access.</li>
+            <li><strong>On-site Trailer Repair:</strong> Keeping horses safe during transport is essential, which is why we offer on-site trailer repair services. From regular maintenance to emergency fixes, our professional repair services ensure safe travels for all horses.</li>
+        </ul>
+
+        <h2>How You Can Help</h2>
+        <p>
+            You can help by adopting, volunteering, or donating to support our cause. Every contribution goes directly to the care of the horses.
+            Visit our 'View Horses' section to meet some of the horses currently up for adoption, or contact us for more ways to get involved.
+        </p>
+        <p>
+            Financial support allows us to continue providing top-tier care for the horses. Donations go directly toward medical expenses, food, facility upkeep, and rescue operations. Consider making a one-time contribution or becoming a monthly donor to sustain our efforts.
+        </p>
+        <p>
+            Whether through adoption, volunteering, donating, or simply sharing our message, your support plays a vital role in ensuring these horses get the second chance they deserve.
+        </p>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div id="faqContainer"></div>
+        </div>
+    </div>
+
+    <!-- Compact Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <!-- Donation Section -->
+            <div class="footer-section donation-section">
+                <h3>Support Us</h3>
+                <img src="https://github.com/wuhplaptop/432-fdf-sdg-gt34-g/blob/main/horses/dono.png?raw=true" alt="Donation QR Code">
+                <p><a href="https://www.zeffy.com/donation-form/cf77c00a-6d88-4f4c-a77e-2eb9f3f4e9c2" target="_blank">Donate via Zeffy</a></p>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h3 id="contact">Contact Us</h3>
+                <p>Email: support@coffinacres-spiritofm46-rescue.org</p>
+                <p>Phone: +1 989 620 5955</p>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/CoffinAcres/" target="_blank">🌐</a> <!-- Facebook -->
+                    <a href="https://www.tiktok.com/@coffinacresequinerescue" target="_blank">🎵</a> <!-- TikTok -->
+                </div>
+            </div>
+
+            <!-- Location Section -->
+            <div class="footer-section">
+                <h3>Our Location</h3>
+                <p>11086 W Howard City-Edmore, Lakeview, MI 48850</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Function to toggle the navigation menu on mobile
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Function to load FAQ data from config.json
+        function loadFAQs() {
+            fetch('config.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Failed to load config.json");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    renderFAQs(data.faqs);
+                })
+                .catch(error => console.error('Error loading FAQ data:', error));
+        }
+
+        // Function to render FAQ section
+        function renderFAQs(faqs) {
+            const faqContainer = document.getElementById('faqContainer');
+            faqContainer.innerHTML = ''; // Clear previous content
+
+            faqs.forEach(faq => {
+                const faqElement = document.createElement('div');
+                faqElement.classList.add('faq');
+
+                faqElement.innerHTML = `
+                    <h3>${faq.question}</h3>
+                    <p>${faq.answer}</p>
+                `;
+
+                faqElement.addEventListener('click', function () {
+                    this.classList.toggle('active');
+                });
+
+                faqContainer.appendChild(faqElement);
+            });
+        }
+
+        // Load FAQs when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            loadFAQs();
+        });
+    </script>
+
+</body>
+
+</html>
