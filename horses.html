@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Horse Rescue - Home">
+    <meta property="og:description" content="Dedicated to the rescue and rehabilitation of horses.">
+    <meta property="og:image" content="https://github.com/wuhplaptop/432-fdf-sdg-gt34-g/blob/main/horses/horselogo.jpg?raw=true">
+    <meta property="og:url" content="https://coffinacres-spiritofm46-rescue.org">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="description" content="Horse Rescue - Dedicated to rescuing and rehabilitating horses.">
+    <title>Spirit of M46 Rescue - View Horses</title>
+    
+    <!-- Favicon settings -->
+    <link rel="icon" href="https://github.com/wuhplaptop/432-fdf-sdg-gt34-g/blob/main/horses/horselogo.jpg?raw=true" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://github.com/wuhplaptop/432-fdf-sdg-gt34-g/blob/main/horses/horselogo.jpg?raw=true">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://github.com/wuhplaptop/432-fdf-sdg-gt34-g/blob/main/horses/horselogo.jpg?raw=true">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://github.com/wuhplaptop/432-fdf-sdg-gt34-g/blob/main/horses/horselogo.jpg?raw=true">
+
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff; /* White background */
+            color: #000000; /* Black text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #ffffff; /* White header */
+            color: #000000; /* Black header text */
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+
+        header p {
+            font-size: 1.1em;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: #ffffff; /* White navigation */
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ff0000; /* Red text for the nav links */
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #ff0000; /* Red background on hover */
+            color: #ffffff; /* White text on hover */
+        }
+
+        /* Hamburger menu for mobile */
+        .menu-toggle {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+            color: #ff0000; /* Red color for hamburger icon */
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            padding: 10px 20px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #ffffff;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+            }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .search-bar input {
+            width: 80%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ff0000; /* Red border */
+            background-color: #ffffff;
+            color: #000000;
+            font-size: 1em;
+        }
+
+        .filter-bar {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filter-bar select {
+            width: 60%;
+            padding: 10px;
+            border: 1px solid #ff0000; /* Red border */
+            border-radius: 10px;
+            font-size: 1em;
+            color: #ff0000; /* Red text for the filter */
+            background-color: #ffffff;
+        }
+
+        .filter-bar select:focus {
+            outline: none;
+            border-color: #ff0000;
+        }
+
+        .horse {
+            background-color: #ffffff; /* White horse card background */
+            border: 1px solid #ff0000; /* Red border */
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .carousel img {
+            width: 100%;
+            max-height: 400px;
+            border-radius: 10px;
+        }
+
+        .carousel .prev, .carousel .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .carousel .prev {
+            left: 10px;
+        }
+
+        .carousel .next {
+            right: 10px;
+        }
+
+        .horse-content {
+            flex-grow: 1;
+        }
+
+        .horse h3 {
+            color: #000000; /* Black heading text */
+            margin: 0 0 5px 0;
+            font-size: 1.2em;
+        }
+
+        .horse p {
+            color: #555555; /* Dark grey for the description */
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        .action-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .like-button, .comment-button {
+            background-color: transparent;
+            border: none;
+            color: #ff0000; /* Red like/comment buttons */
+            font-size: 1em;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .like-button:hover, .comment-button:hover {
+            color: #ff0000; /* Red hover */
+        }
+
+        .comment-section {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .comment-section h4 {
+            color: #000000;
+            margin-bottom: 5px;
+        }
+
+        .comment-input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            background-color: #f7f7f7;
+            border: 1px solid #ff0000; /* Red border */
+            color: #000000;
+            border-radius: 8px;
+        }
+
+        .comment-list p {
+            color: #555555;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #ff0000; /* Red footer */
+            padding: 20px 0;
+            color: #ffffff; /* White text */
+            text-align: center;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        footer .footer-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 180px;
+        }
+
+        footer .footer-section h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        footer .footer-section p, footer .footer-section a {
+            color: #ffffff;
+            font-size: 0.9em;
+            text-decoration: none;
+        }
+
+        footer .footer-section a:hover {
+            color: #000000; /* Black hover effect */
+        }
+
+        footer .social-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        footer .social-links a {
+            font-size: 1.3em;
+            color: #ffffff;
+        }
+
+        footer .donation-section img {
+            width: 120px;
+            margin-bottom: 5px;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            footer {
+                padding: 10px 0;
+            }
+
+            footer .footer-content {
+                justify-content: space-around;
+                gap: 10px;
+            }
+
+            footer .footer-section {
+                max-width: 140px;
+            }
+
+            footer .footer-section h3 {
+                font-size: 1em;
+            }
+
+            footer .footer-section p, footer .footer-section a {
+                font-size: 0.85em;
+            }
+
+            footer .social-links a {
+                font-size: 1.2em;
+            }
+
+            footer .donation-section img {
+                width: 90px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation Menu -->
+<nav>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="horses.html">View Horses</a>
+        <a href="#services">Services</a>
+        <a href="links.html">Links</a>
+        <a href="#contact">Contact Us</a>
+    </div>
+</nav>
+
+
+<header>
+    <h1>Spirit of M46 Rescue</h1>
+    <p>Meet our beautiful horses!</p>
+</header>
+
+<div class="container">
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for horses by name or description...">
+    </div>
+
+    <!-- Filter Section -->
+    <div class="filter-bar">
+        <select id="filterSelect">
+            <option value="">Select Filter</option>
+            <!-- Filters will be populated dynamically -->
+        </select>
+    </div>
+
+    <!-- Horse cards will be dynamically added here -->
+    <div id="horsesContainer"></div>
+</div>
+
+<!-- Services Section -->
+<div class="container">
+    <h2 id="services">Our Services</h2> <!-- This is where the anchor will point to -->
+    <ul>
+        <li><strong>Equine Rescue:</strong> Rescuing horses from dangerous situations.</li>
+        <li><strong>Rehabilitation:</strong> Customized plans for veterinary care and therapy.</li>
+        <li><strong>Adoption:</strong> Finding loving homes for rehabilitated horses.</li>
+        <li><strong>Sanctuary:</strong> Permanent care for unadoptable horses.</li>
+        <li><strong>Pasture Board:</strong> Open spaces for horses to roam freely.</li>
+        <li><strong>Stall Board:</strong> Comfortable stables with daily exercise and pasture access.</li>
+        <li><strong>On-site Trailer Repair:</strong> Ensuring safe travel for horses with repair services.</li>
+    </ul>
+</div>
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-content">
+        <!-- Donation Section -->
+        <div class="footer-section donation-section">
+            <h3>Support Us</h3>
+            <img src="https://github.com/wuhplaptop/432-fdf-sdg-gt34-g/blob/main/horses/dono.png?raw=true" alt="Donation QR Code">
+            <p><a href="https://www.zeffy.com/donation-form/cf77c00a-6d88-4f4c-a77e-2eb9f3f4e9c2" target="_blank">Donate via Zeffy</a></p>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="footer-section">
+            <h3 id="contact">Contact Us</h3>
+            <p>Email: support@coffinacres-spiritofm46-rescue.org</p>
+            <p>Phone: +1 989 620 5955</p>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="https://www.facebook.com/CoffinAcres/" target="_blank">🌐</a> <!-- Facebook -->
+                <a href="https://www.tiktok.com/@coffinacresequinerescue" target="_blank">🎵</a> <!-- TikTok -->
+            </div>
+        </div>
+
+        <!-- Location Section -->
+        <div class="footer-section">
+            <h3>Our Location</h3>
+            <p>11086 W Howard City-Edmore, Lakeview, MI 48850</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Function to toggle the navigation menu on mobile
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+
+// Google Apps Script API endpoint
+const googleSheetAPI = 'https://script.google.com/macros/s/AKfycbzk4OGdvDd7OkWxeUvGcBGnu30_sB-Ek4s6qDRpHt44NfReLExPZjBwbKHrULljFyS2/exec';
+
+// Function to load horse data from Google Sheets
+function loadHorses() {
+    fetch(googleSheetAPI)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(horses => {
+            renderHorses(horses);
+            document.getElementById('searchInput').addEventListener('input', function () {
+                const query = this.value.toLowerCase();
+                const filteredHorses = horses.filter(horse =>
+                    horse.name.toLowerCase().includes(query) ||
+                    horse.description.toLowerCase().includes(query)
+                );
+                renderHorses(filteredHorses, query);
+            });
+            document.getElementById('filterSelect').addEventListener('change', function () {
+                const selectedFilter = this.value;
+                const filteredHorses = selectedFilter
+                    ? horses.filter(horse => horse.description.toLowerCase().includes(selectedFilter))
+                    : horses;
+                renderHorses(filteredHorses);
+            });
+        })
+        .catch(error => console.error('Error loading horse data:', error));
+}
+
+// Function to load filters from config.json
+function loadFilters() {
+    fetch('config.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to load config.json");
+            }
+            return response.json();
+        })
+        .then(data => {
+            const filters = data.filters;
+            renderFilters(filters);
+        })
+        .catch(error => console.error('Error loading filters:', error));
+}
+
+// Function to render filters into the dropdown
+function renderFilters(filters) {
+    const filterSelect = document.getElementById('filterSelect');
+    filters.forEach(filter => {
+        const option = document.createElement('option');
+        option.value = filter.toLowerCase();
+        option.textContent = filter.charAt(0).toUpperCase() + filter.slice(1);
+        filterSelect.appendChild(option);
+    });
+}
+
+// Function to render horse cards
+function renderHorses(horses, query = '') {
+    const container = document.getElementById('horsesContainer');
+    container.innerHTML = ''; // Clear previous content
+    horses.forEach(horse => {
+        const horseElement = document.createElement('div');
+        horseElement.classList.add('horse');
+        
+        // Highlight search term in name and description
+        const highlightedName = highlightText(horse.name, query);
+        const highlightedDescription = highlightText(horse.description, query);
+
+        let imageCarousel = `
+            <div class="carousel">
+                <button class="prev" onclick="moveSlide(-1, '${horse.name}')">❮</button>
+                ${horse.imageUrls.map((url, index) => `<img src="${url.trim()}" id="${horse.name}-slide-${index}" style="display: ${index === 0 ? 'block' : 'none'};">`).join('')}
+                <button class="next" onclick="moveSlide(1, '${horse.name}')">❯</button>
+            </div>
+        `;
+
+        horseElement.innerHTML = `
+            ${imageCarousel}
+            <div class="horse-content">
+                <h3>${highlightedName}</h3>
+                <p>${highlightedDescription}</p>
+                <div class="action-buttons">
+                    <button class="like-button" onclick="likeHorse('${horse.name}')">❤️ ${horse.likes}</button>
+                    <button class="comment-button" onclick="toggleComments('${horse.name}')">💬 Comment</button>
+                </div>
+            </div>
+            <div class="comment-section" id="${horse.name}-comments">
+                <h4>Comments:</h4>
+                <div class="comment-list">
+                    ${horse.reviews.map(review => `<p>${review}</p>`).join('')}
+                </div>
+                <input class="comment-input" id="${horse.name}-review" type="text" placeholder="Write a comment">
+                <input class="comment-input" id="${horse.name}-reviewer-name" type="text" placeholder="Your name">
+                <button class="comment-button" onclick="submitReview('${horse.name}')">Submit</button>
+            </div>
+        `;
+        container.appendChild(horseElement);
+    });
+}
+
+// Function to control image slider
+function moveSlide(step, horseName) {
+    const slides = document.querySelectorAll(`[id^='${horseName}-slide-']`);
+    let currentIndex = Array.from(slides).findIndex(slide => slide.style.display === 'block');
+    slides[currentIndex].style.display = 'none';
+    let newIndex = (currentIndex + step + slides.length) % slides.length;
+    slides[newIndex].style.display = 'block';
+}
+
+// Function to highlight search term
+function highlightText(text, query) {
+    if (!query) return text;
+    const regex = new RegExp(`(${query})`, 'gi');
+    return text.replace(regex, '<span class="highlight">$1</span>');
+}
+
+// Function to like a horse
+function likeHorse(horseName) {
+    if (localStorage.getItem(`liked-${horseName}`)) {
+        alert("You have already liked this horse.");
+        return;
+    }
+
+    fetch(`${googleSheetAPI}?horseName=${horseName}&action=like`)
+        .then(() => {
+            const likeCountElement = document.querySelector(`.like-button[onclick="likeHorse('${horseName}')"]`);
+            likeCountElement.innerHTML = `❤️ ${parseInt(likeCountElement.innerText.split(' ')[1]) + 1}`;
+            localStorage.setItem(`liked-${horseName}`, true);
+        })
+        .catch(error => console.error('Error liking horse:', error));
+}
+
+// Function to toggle comments section
+function toggleComments(horseName) {
+    const commentSection = document.getElementById(`${horseName}-comments`);
+    if (commentSection.style.display === 'block') {
+        commentSection.style.display = 'none';
+    } else {
+        commentSection.style.display = 'block';
+    }
+}
+
+// Function to submit a review with the user's name
+function submitReview(horseName) {
+    const reviewInput = document.getElementById(`${horseName}-review`);
+    const reviewerNameInput = document.getElementById(`${horseName}-reviewer-name`);
+    const reviewText = reviewInput.value;
+    const reviewerName = reviewerNameInput.value;
+
+    if (reviewText.trim() === '' || reviewerName.trim() === '') {
+        alert("Please enter both a review and your name.");
+        return;
+    }
+
+    fetch(`${googleSheetAPI}?horseName=${horseName}&review=${encodeURIComponent(reviewText)}&reviewerName=${encodeURIComponent(reviewerName)}&action=review`)
+        .then(() => {
+            const reviewsContainer = document.querySelector(`#${horseName}-comments .comment-list`);
+            const newReview = document.createElement('p');
+            newReview.innerText = `${reviewerName}: ${reviewText}`;
+            reviewsContainer.appendChild(newReview);
+            reviewInput.value = ''; // Clear input
+            reviewerNameInput.value = ''; // Clear input
+        })
+        .catch(error => console.error('Error submitting review:', error));
+}
+
+// Load horses, filters, and FAQs when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    loadHorses();
+    loadFilters();
+});
+</script>
+
+</body>
+</html>
