@@ -1,9 +1,6 @@
 {
     "faqs": [
-        {
-            "question": "How do I adopt a horse?",
-            "answer": "To adopt a horse, start by visiting our 'View Horses' page to learn about the horses currently available for adoption. Once you've found a horse you'd like to adopt, you can contact us via email at support@coffinacres-spiritofm46-rescue.org or call our rescue center at +1 989 620 5955. We'll guide you through the adoption process, including meeting the horse and ensuring it's the right fit for your home."
-        },
+        
         {
             "question": "What is the cost of adoption?",
             "answer": "The adoption fees depend on the horse and its needs, typically ranging from $500 to $1,500. These fees cover the horse's care, including veterinary treatment, vaccinations, and rehabilitation. Feel free to contact us for specific details on individual horses and what the adoption fee includes."
@@ -32,8 +29,8 @@
     ],
     "links": [
         {
-            "name": "Donate to Spirit of M46 Rescue",
-            "description": "Support our efforts to rescue and care for horses by making a donation. All contributions go directly to horse care and rescue operations.",
+            "name": "Donate ",
+            "description": "Support our",
             "url": "https://www.zeffy.com/donation-form/cf77c00a-6d88-4f4c-a77e-2eb9f3f4e9c2"
         },
         {
